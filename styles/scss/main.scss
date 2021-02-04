@@ -16,6 +16,88 @@ body{
     display: flex;
     justify-content: space-between;
 
+    &__description{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        flex-basis: 50%;
+        flex-grow: 1;
+
+        &-uptitle{
+            margin-left: 35px;
+            font-family: $ff-roboto;
+            font-size: $fs-main-menu;
+            color: $color-gray;
+            position: relative;
+
+            &::before{
+                content: "";
+                margin-left: -35px;
+                background-color: $color-gray;
+                height: 1px;
+                width: 30px;
+                position: absolute;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+
+
+        &-title{
+
+            font-family: $ff-roboto;
+            font-size: $fs-main-title;
+            color: $color-dark-blue;
+            font-weight: 500;
+        }
+
+        &-paragraph{
+            font-family: $ff-nunito;
+            font-size: $fs-main-p;
+            color: $color-gray;
+        }
+    }
+
+    &__buttons{
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+
+        &-download{
+            background-color: $color-dark-blue;
+            color: $color-white;
+            width: 11rem;
+            height: 3rem;
+            border: none;
+            border-radius: 8px;
+            font-family: $ff-roboto;
+            font-weight: 500;
+
+            &:hover{
+                background-color: $color-white;
+                border: 1px solid $color-dark-blue;
+                color: $color-dark-blue;
+            }
+        }
+
+        &-learn{
+            
+            *{
+                text-decoration: none;
+                font-family: $ff-roboto;
+                font-weight: 500;
+                color: $color-dark-blue;
+            }
+
+            &:hover{
+                *{
+                    color: $color-accent-blue;
+                }
+            }
+        }
+    }
+
 
 
 
@@ -23,5 +105,23 @@ body{
     
     &__image{
         margin-right: -6rem;
+        max-width: 718px;
+        
+        &-img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}
+
+.color-text{
+    color: $color-accent-blue;
+}
+
+
+@media all and (max-width: 760px){
+    .main-content{
+        flex-wrap: wrap-reverse;
     }
 }
