@@ -1,0 +1,100 @@
+.header-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5.125rem;
+}
+
+.logo{
+    &__img{
+        width: 39px;
+        height: 38px;
+    }
+}
+.menu{
+    flex-grow: 1;
+    flex-basis: 80%;
+    &__list{
+        display: flex;
+        gap: 1.875rem;
+    }
+
+    &__item{
+        list-style: none;
+        padding: 0.7rem;
+        position: relative;
+
+        // transition
+        *{
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        &::before, &::after{
+            height: 80%;
+            width: 80%;
+            position: absolute;
+            content: '';
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+            opacity: 0;
+        }
+
+        &::before {
+            right: 0;
+            top: 0;
+            border-right: 2.5px solid $color-accent-blue;
+            border-top: 2.5px solid $color-accent-blue;
+            -webkit-transform: translate(100%, -50%);
+            transform: translate(100%, -50%);
+          }
+          &::after {
+            left: 0;
+            bottom: 0;
+            border-left: 2.5px solid $color-accent-blue;
+            border-bottom: 2.5px solid $color-accent-blue;
+            -webkit-transform: translate(-100%, 50%);
+            transform: translate(-100%, 50%);
+          }
+
+          &:hover::before, &:hover::after{
+            -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+            opacity: 1;
+            overflow: hidden;
+          }
+
+        &-link{
+            text-decoration: none;
+            color: $color-dark-blue;
+            font-family: $ff-roboto;
+            font-weight: 500;
+            
+
+            
+        }
+
+    }
+}
+
+.social{
+    &__item{
+        list-style: none;
+        
+    }
+    &__list{
+        display: flex;
+        gap: .5rem;
+
+        &-link{
+            text-decoration: none;
+            color: $color-dark-blue;
+            font-family: $ff-roboto;
+            font-weight: 400;
+        }
+
+        
+    }
+}

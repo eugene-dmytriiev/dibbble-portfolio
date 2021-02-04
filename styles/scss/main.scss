@@ -1,0 +1,27 @@
+@import 'normalize';
+@import 'variables';
+@import 'header';
+
+body{
+    background-color: $color-white;
+}
+.container{
+    max-width: 1130px;
+    padding: 0 10px;
+    margin: 0 auto;
+
+}
+
+.main-content{
+    display: flex;
+    justify-content: space-between;
+
+
+
+
+
+    
+    &__image{
+        margin-right: -6rem;
+    }
+}
